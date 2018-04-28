@@ -51,13 +51,7 @@ window.onload = function(){
 	function clickPlus(){
 
 		var a = parseInt(textBox.value);
-		var b = resultBox.value;
 		resultBox.value = a;
-		
-		if (resultBox.value !== null){
-			resultBox.value = a;
-		}
-		
 		show.innerHTML = "+";
 		textBox.value = null;
 		
@@ -114,7 +108,7 @@ window.onload = function(){
 			var calculated = second * first;
 		}
 
-		resultBox.value = calculated;
+		textBox.value = calculated;
 	}
 
 	equals.addEventListener('click', calculate);
