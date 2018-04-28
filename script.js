@@ -45,24 +45,31 @@ window.onload = function(){
 	function clickNine(){
 		textBox.value += "9";	
 	}
+
 	function clickPlus(){
+		
 		var a = parseInt(textBox.value);
-		show.innerHTML = a + " +";
-		textBox.value = null;	
+		resultBox.value = a;
+		show.innerHTML = "+";
+		textBox.value = null;
+		
 	}
 	function clickMinus(){
 		var a = parseInt(textBox.value);
-		show.innerHTML = a + " -";
+		resultBox.value = a;
+		show.innerHTML = "-";
 		textBox.value = null;	
 	}
 	function clickMultiply(){
 		var a = parseInt(textBox.value);
-		show.innerHTML = a + " *";
+		resultBox.value = a;
+		show.innerHTML =  "*";
 		textBox.value = null;	
 	}
 	function clickDivide(){
 		var a = parseInt(textBox.value);
-		show.innerHTML = a + " /";
+		resultBox.value = a;
+		show.innerHTML = "/";
 		textBox.value = null;	
 	}
 
@@ -83,14 +90,32 @@ window.onload = function(){
 
 
 	function calculate(){
-		var calculation = parseInt(textBox.value);
-		
+		var second = parseInt(textBox.value);
+		var	first = parseInt(resultBox.value);
+			
+			
+
+		if (show.innerHTML == "+"){
+		var calculated = second + first;
+		}
+		if (show.innerHTML == "-"){
+		var calculated = first - second;
+		}
+		if (show.innerHTML == "/"){
+		var calculated = first / second;
+		}
+		if (show.innerHTML == "*"){
+		var calculated = second * first;
+		}
+
+		resultBox.value = calculated;
 	}
 
 	equals.addEventListener('click', calculate);
 
 //------------------------------------------------------------------------------------------------------------------------
 	function clearFunction(){
+		resultBox.value = null;
 		textBox.value = null;
 		show.innerHTML = "&nbsp;"
 	}	
