@@ -14,6 +14,8 @@ window.onload = function(){
 	var clear = document.getElementById('nC');
 	var textBox = document.getElementById('numberBox');
 	var show = document.getElementById('show');
+	var resultBox = document.getElementById('resultBox');
+	resultBox.value = null;
 
 	function clickZero(){
 		textBox.value += "0";	
@@ -47,9 +49,15 @@ window.onload = function(){
 	}
 
 	function clickPlus(){
-		
+
 		var a = parseInt(textBox.value);
+		var b = resultBox.value;
 		resultBox.value = a;
+		
+		if (resultBox.value !== null){
+			resultBox.value = a;
+		}
+		
 		show.innerHTML = "+";
 		textBox.value = null;
 		
@@ -92,20 +100,18 @@ window.onload = function(){
 	function calculate(){
 		var second = parseInt(textBox.value);
 		var	first = parseInt(resultBox.value);
-			
-			
 
 		if (show.innerHTML == "+"){
-		var calculated = second + first;
+			var calculated = second + first;
 		}
 		if (show.innerHTML == "-"){
-		var calculated = first - second;
+			var calculated = first - second;
 		}
 		if (show.innerHTML == "/"){
-		var calculated = first / second;
+			var calculated = first / second;
 		}
 		if (show.innerHTML == "*"){
-		var calculated = second * first;
+			var calculated = second * first;
 		}
 
 		resultBox.value = calculated;
