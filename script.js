@@ -107,7 +107,7 @@ window.onload = function(){
 		if (show.innerHTML == "*"){
 			var calculated = second * first;
 		}
-
+		show.innerHTML += "  " + textBox.value;
 		textBox.value = calculated;
 	}
 
@@ -119,6 +119,7 @@ window.onload = function(){
 		textBox.value = null;
 		show.innerHTML = "&nbsp;"
 	}	
+
 	clear.addEventListener('click', clearFunction);
 //------------------------------------------------------------------------------------------------------------------------
 
