@@ -90,7 +90,7 @@ window.onload = function(){
 	multiply.addEventListener('click', clickMultiply);
 	divide.addEventListener('click', clickDivide);
 
-
+var showNumber = document.getElementById("shownumber");
 	function calculate(){
 		var second = parseInt(textBox.value);
 		var	first = parseInt(resultBox.value);
@@ -107,7 +107,7 @@ window.onload = function(){
 		if (show.innerHTML == "*"){
 			var calculated = second * first;
 		}
-		show.innerHTML += "  " + textBox.value;
+		showNumber.innerHTML = "  " + textBox.value;
 		textBox.value = calculated;
 	}
 
@@ -117,7 +117,8 @@ window.onload = function(){
 	function clearFunction(){
 		resultBox.value = null;
 		textBox.value = null;
-		show.innerHTML = "&nbsp;"
+		show.innerHTML = "&nbsp;";
+		showNumber.innerHTML = "&nbsp;";
 	}	
 
 	clear.addEventListener('click', clearFunction);
